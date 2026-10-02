@@ -62,12 +62,14 @@ class Scene private constructor() {
         val model: String,
         val tex: String,
         val uv: Float,
-        val blend: Boolean,
+        // The see-through flag and the opacity belong to the scene, and a trigger can
+        // change both while the scene runs.
+        var blend: Boolean,
         val pos: FloatArray,
         val rot: FloatArray,
         val scale: FloatArray,
         val color: FloatArray,
-        val opacity: Float,
+        var opacity: Float,
         val anim: Anim?,
         val parent: Int,
     ) {
